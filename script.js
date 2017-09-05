@@ -32,20 +32,18 @@ var movies = [
     }
 ];
 
-
-var moviesElements = movies.map(movie => {
-    return React.createElement('li', {key: movie.id},
+var moviesElements = movies.map(movie =>
+    React.createElement('li', {key: movie.id},
         React.createElement('h2', {}, movie.title),
         React.createElement('p', {}, movie.desc),
         React.createElement('img', {src: movie.src})
-
+    )
 );
-});
 
 var element = 
     React.createElement('div', {},
         React.createElement('h1', {}, 'Movies list'),
         React.createElement('ul', {}, moviesElements)
-);
+    );
 
 ReactDOM.render(element, document.getElementById('app'));
